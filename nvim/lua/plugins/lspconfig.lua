@@ -15,6 +15,17 @@ return {
 			function(server)
 				lspconfig[server].setup({capabilities = caps})
 			end,
-		})
-	end
-}
+			["lua_ls"] = function()
+				lspconfig["lua_ls"].setup({
+					capabilities = caps,
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = {"vim"},
+							},
+						},
+					},})
+				end,
+			})
+		end
+	}
