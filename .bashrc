@@ -8,7 +8,18 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-source /usr/share/git/git-prompt.sh
+source /usr/share/git/git-prompt.sh # Allows for the __git_ps1 function
 
-PS1='\[\033[1;32m\][\u@\h]:\[\033[1;34m\]\w\[\033[0m\] \[\033[1;31m\]$(__git_ps1 "(%s) ")\[\033[1;37m\]$ '
-#e725
+# Colour configuration
+GREEN="\[\033[1;32m\]"
+BLUE="\[\033[1;34m\]"
+RED="\[\033[1;31m\]"
+WHITE="\[\033[1;37m\]"
+
+END_CHAR="\[\033[0m\]"
+
+
+PS1="${GREEN}\u " # Set username to green
+PS1+="${BLUE}\w" # Set working directory to blue
+PS1+="${RED}\$(__git_ps1 ' [%s ]')" # If on branch add a space and branch name in red
+PS1+="${WHITE} $ ${END_CHAR}" # Reset the prompt
