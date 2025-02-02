@@ -6,7 +6,6 @@ Electron
 glib-2.0
 gtk-3.0
 htop
-hypr
 ibus
 kitty
 neofetch
@@ -18,8 +17,8 @@ pavucontrol.ini
 pulse
 user-dirs.dirs
 user-dirs.locale
-waybar
 xsettingsd
+kitty
 
 
 !waybar/
