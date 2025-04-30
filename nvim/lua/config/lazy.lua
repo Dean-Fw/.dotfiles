@@ -21,6 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.diagnostic.config({
+  virtual_text = true,
+  virtual_lines = { current_line = true },
+  underline = true,
+  update_in_insert = false
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
