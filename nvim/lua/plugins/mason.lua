@@ -14,7 +14,8 @@ return {
 			lspconfig.setup({
 				ensure_installed = {
 					"lua_ls" ,
-					"terraformls"
+					"terraformls",
+					"omnisharp",
 				},
 			})
 		end
