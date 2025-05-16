@@ -7,10 +7,10 @@ return {
 			theme = "dragon",
 			background = {
 				dark = "dragon",
-				light = "lotus"
+				light = "lotus",
 			},
 		})
 
 		vim.cmd("colorscheme kanagawa")
-	end
+	end,
 }

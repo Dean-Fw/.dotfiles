@@ -1,9 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile"},
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		{ "antosha417/nvim-lsp-file-operations", config = true }
+		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
 		local cmp = require("cmp_nvim_lsp")
@@ -13,16 +13,15 @@ return {
 			settings = {
 				Lua = {
 					diagnostics = {
-						globals = {"vim"},
+						globals = { "vim" },
 					},
 				},
 			},
 		})
-		vim.lsp.config("lua_ls", {
-
+		vim.lsp.config("omnisharp", {
 			capabilities = caps,
 			on_attach = on_attach,
-			cmd = { "dotnet", "/home/dfw-work/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+			cmd = { "dotnet", os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 			-- Enables support for reading code style, naming convention and analyzer
 			-- settings from .editorconfig.
 			enable_editorconfig_support = true,
@@ -52,5 +51,5 @@ return {
 			-- true
 			analyze_open_documents_only = false,
 		})
-	end
+	end,
 }
