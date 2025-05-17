@@ -13,7 +13,7 @@ return {
 
 			lspconfig.setup({
 				ensure_installed = {
-					"lua_ls" ,
+					"lua_ls",
 					"terraformls",
 					"omnisharp",
 				},
@@ -21,12 +21,13 @@ return {
 		end,
 		opts = {
 			handlers = {
-				function (name)
+				function(name)
 					local lspconfig = require('lspconfig')
 					local cmp = require("cmp_nvim_lsp")
 					local caps = cmp.default_capabilities()
-					lspconfig[name].setup({capabilities = caps})
+					lspconfig[name].setup({ capabilities = caps })
 				end,
+
 			},
 		},
 	},
