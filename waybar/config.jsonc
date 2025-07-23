@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 [{
-	"output": ["HDMI-A-1"],
+	"output": ["HDMI-A-1", "DP-1"],
 	// "layer": "top", // Waybar at top layer
 	"position": "bottom", // Waybar position (top|bottom|left|right)
 	// "height": 24, // Waybar height (to be removed for auto height)
@@ -8,6 +8,7 @@
 	"spacing": 5, // Gaps between modules (5px)
 	// Choose the order of the modules
 	"modules-left": [
+		"custom/menu",
 		"hyprland/workspaces"
 	],
 	"modules-right": [
@@ -40,14 +41,14 @@
 		"format-muted": "󰝟",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "󰂑",
-			"headset": "󰂑",
-			"phone": "",
-			"portable": "",
-			"car": "",
 			"default": ["", "", ""]
 		},
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"on-click-right": "pavucontrol"
-	}
+	},
+    	"custom/menu": {
+        	"format": "",
+        	"tooltip": false,
+        	"on-click": "wofi --show drun"
+    	}
 }]
