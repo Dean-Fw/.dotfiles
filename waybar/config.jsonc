@@ -1,14 +1,16 @@
 // -*- mode: jsonc -*-
 [{
-	"output": ["HDMI-A-1", "DP-1"],
-	// "layer": "top", // Waybar at top layer
-	"position": "bottom", // Waybar position (top|bottom|left|right)
-	// "height": 24, // Waybar height (to be removed for auto height)
-	// "width": 1280, // Waybar width
-	"spacing": 5, // Gaps between modules (5px)
-	// Choose the order of the modules
+	"output": ["HDMI-A-1"],
+	// "layer": "top", // waybar at top layer
+	"position": "bottom", // waybar position (top|bottom|left|right)
+	// "height": 24, // waybar height (to be removed for auto height)
+	// "width": 1280, // waybar width
+	"spacing": 5, // gaps between modules (5px)
+	// choose the order of the modules
 	"modules-left": [
-		"custom/menu",
+		"custom/menu"
+	],
+	"modules-center" : [
 		"hyprland/workspaces"
 	],
 	"modules-right": [
@@ -17,7 +19,7 @@
 		"clock",
 		"tray"
 	],
-	// Modules configuration
+	// modules configuration
 	"hyprland/workspaces": {
 		"all-outputs": false
 	},
@@ -31,7 +33,7 @@
 	"clock": {
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format": " {:L%H:%M}",
-		"format-alt": " {:L%a %F}"
+		"format-alt": " {:L%A %F}"
 	},
 	"wireplumber": {
 		"scroll-step": 2, // %, can be a float
@@ -43,7 +45,7 @@
 			"headphone": "",
 			"default": ["", "", ""]
 		},
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click": "wpctl set-mute @default_audio_sink@ toggle",
 		"on-click-right": "pavucontrol"
 	},
     	"custom/menu": {
@@ -51,4 +53,20 @@
         	"tooltip": false,
         	"on-click": "wofi --show drun"
     	}
+},
+{
+	"output": ["DP-1"],
+	// "layer": "top", // waybar at top layer
+	"position": "bottom", // waybar position (top|bottom|left|right)
+	// "height": 24, // waybar height (to be removed for auto height)
+	// "width": 1280, // waybar width
+	"spacing": 5, // gaps between modules (5px)
+	// choose the order of the modules
+	"modules-center" : [
+		"hyprland/workspaces"
+	],
+	// modules configuration
+	"hyprland/workspaces": {
+		"all-outputs": false
+	}
 }]
