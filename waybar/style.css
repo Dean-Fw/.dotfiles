@@ -22,8 +22,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-	color: #eef7eb;
-	background-color: #586954;
+	color: #000000;
+	background-color: #deddda;
 }
 
 .modules-left {
